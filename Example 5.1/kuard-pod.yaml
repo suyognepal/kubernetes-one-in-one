@@ -1,0 +1,13 @@
+apiversion: v1
+kind: pod
+metadata:
+  name: kuard
+  spec:
+    containers:
+      - image: kuard:latest
+        name: kuard
+        ports:
+          - containerPort: 8080
+            name: http
+            protocol: TCP
+

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuard
+spec:
+  containers:
+  - name: kuard-pod
+    image: gcr.io/kuar-demo/kuard-amd64:blue
+    ports:
+    - containerPort: 8080
+    volumeMounts:
+    - name: kuard-vol
+      mountPath: /app
+  volumes:
+  - name: kuard-vol
+    hostPath:
+      path: /mnt/vpath
